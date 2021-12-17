@@ -24,7 +24,7 @@ function trivial( test )
     return null;
   });
   /* latest is the version where deasync was built for njs v16 */
-  a.shell( 'npm add wdeasync@alpha w.process.tree.windows@alpha bufferfromfile@alpha' );
+  a.shell( 'npm add wdeasync@delta w.process.tree.windows@delta bufferfromfile@delta' );
   a.ready.then( ( op ) =>
   {
     test.identical( op.exitCode, 0 );
