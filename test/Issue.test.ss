@@ -24,7 +24,7 @@ function trivial( test )
     return null;
   });
   /* latest is the version where deasync was built for njs v16 */
-  a.shell( 'npm install wdeasync@delta w.process.tree.windows@delta bufferfromfile@delta' );
+  a.shell( 'npm install willbe@delta' );
   a.ready.then( ( op ) =>
   {
     test.identical( op.exitCode, 0 );
