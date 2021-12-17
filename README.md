@@ -2,52 +2,21 @@
 
 Experiments to [issue #2484](https://github.com/nodejs/node-gyp/issues/2484) in `node-gyp`.
 
-Experiments is installing of several binary modules, see the list of modules in parents :
+Install three modules: deasync, w.process.tree.windows, bufferfromfile
 
-- Windows-2016 ( deasync, w.process.tree.windows, bufferfromfile )
+| NodeJs version | Windows-2016         | Windows-2019         | Windows-2022                |
+|----------------|----------------------|----------------------|-----------------------------|
+| 12.x           | pass                 | pass                 | fail ( wrong GitHub setup ) |
+| 14.x           | pass                 | pass                 | fail ( wrong GitHub setup ) |
+| 16.x           | fail ( demonstrate ) | fail ( demonstrate ) | fail ( wrong GitHub setup ) |
 
--- NodeJs 12.x
+`wrong GitHub setup` means error message ` You need to install the latest version of Visual Studio` but not problem on Windows-2016, Windows-2019.
 
--- NodeJs 14.x
+Install two modules on Windows-2019:
 
--- NodeJs 16.x
+| NodeJs version | deasync-wprocess.tree | deasync-bufferfromfile | bufferfromfile-wprocess.tree |
+|----------------|-----------------------|------------------------|------------------------------|
+| 12.x           | pass                  | pass                   | pass                         |
+| 14.x           | pass                  | pass                   | pass                         |
+| 16.x           | pass                  | pass                   | pass                         |
 
-- Windows-2019 ( deasync, w.process.tree.windows, bufferfromfile )
-
--- NodeJs 12.x
-
--- NodeJs 14.x
-
--- NodeJs 16.x
-
-- Windows-2022 ( deasync, w.process.tree.windows, bufferfromfile )
-
--- NodeJs 12.x
-
--- NodeJs 14.x
-
--- NodeJs 16.x
-
-- Windows-2019 ( deasync, w.process.tree.windows )
-
--- NodeJs 12.x
-
--- NodeJs 14.x
-
--- NodeJs 16.x
-
-- Windows-2019 ( deasync, bufferfromfile )
-
--- NodeJs 12.x
-
--- NodeJs 14.x
-
--- NodeJs 16.x
-
-- Windows-2019 ( bufferfromfile, w.process.tree.windows )
-
--- NodeJs 12.x
-
--- NodeJs 14.x
-
--- NodeJs 16.x
