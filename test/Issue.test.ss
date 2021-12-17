@@ -28,6 +28,7 @@ function trivial( test )
   a.ready.then( ( op ) =>
   {
     test.identical( op.exitCode, 0 );
+    return null;
   });
 
   /* - */
