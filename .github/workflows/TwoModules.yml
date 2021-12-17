@@ -1,24 +1,10 @@
 
-name : Different OSs
+name : Two modules
 on : [ push ]
 
 jobs :
 
-  windows-2016 :
-    strategy :
-      fail-fast : false
-      matrix :
-        os : [ windows-2016 ]
-        node-version : [ 12.x, 14.x, 16.x ]
-    runs-on : ${{ matrix.os }}
-    steps :
-    - name : ${{ matrix.node-version }}
-      uses : actions/setup-node@v1
-      with :
-        node-version : ${{ matrix.node-version }}
-    - run : npm install wdeasync@gamma w.process.tree.windows@gamma bufferfromfile@gamma
-
-  windows-2019 :
+  deasync-wprocess-tree :
     strategy :
       fail-fast : false
       matrix :
@@ -30,13 +16,13 @@ jobs :
       uses : actions/setup-node@v1
       with :
         node-version : ${{ matrix.node-version }}
-    - run : npm install wdeasync@gamma w.process.tree.windows@gamma bufferfromfile@gamma
+    - run : npm install wdeasync@gamma w.process.tree.windows@gamma
 
-  windows-2022 :
+  deasync-bufferfromfile :
     strategy :
       fail-fast : false
       matrix :
-        os : [ windows-2022 ]
+        os : [ windows-2019 ]
         node-version : [ 12.x, 14.x, 16.x ]
     runs-on : ${{ matrix.os }}
     steps :
@@ -44,4 +30,18 @@ jobs :
       uses : actions/setup-node@v1
       with :
         node-version : ${{ matrix.node-version }}
-    - run : npm install wdeasync@gamma w.process.tree.windows@gamma bufferfromfile@gamma
+    - run : npm install wdeasync@gamma bufferfromfile@gamma
+
+  bufferfromfile-wprocess-tree :
+    strategy :
+      fail-fast : false
+      matrix :
+        os : [ windows-2019 ]
+        node-version : [ 12.x, 14.x, 16.x ]
+    runs-on : ${{ matrix.os }}
+    steps :
+    - name : ${{ matrix.node-version }}
+      uses : actions/setup-node@v1
+      with :
+        node-version : ${{ matrix.node-version }}
+    - run : npm install bufferfromfile@gamma w.process.tree.windows@gamma
